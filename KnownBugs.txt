@@ -1,0 +1,17 @@
+void clear() 
+{
+	while (root) 
+	{
+		if (root->L) 
+		{
+			right_rotate (root);  // right_rotate prepise v defaultni implementaci root spravne
+			root = root->P; // takze tohle ulozi do rootu nullptr, takze se nic nedeletne (vsech x tisic nodu nesmazanych)
+		}
+		else
+		{
+			root = root->R;
+			delete root->P; //tohle failne, pokud mazu posledni vrchol (root bude nullptr)
+			root->P = nullptr;
+		}
+	}
+}
