@@ -28,7 +28,7 @@ start:
 	} else if (mode == 'e' || mode == 'q')
 		return 0;
 	else {
-		std::cout << "Wrong mode! Try again!" << std::endl;
-		goto start;
+		std::cout << "Wrong mode! Try again!" << std::endl;		
 	}
+	goto start;
 }
