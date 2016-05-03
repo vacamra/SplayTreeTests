@@ -1,10 +1,4 @@
 
-#include "splayset_concurrent.hpp"
-#include "stopwatch.hpp"
-#include "rc4prng.hpp"
-#include "Settings.h"
-#include "testingUtils.h"
-
 #include <cassert>
 #include <concurrent_unordered_set.h>
 #include <mutex>
@@ -15,6 +9,13 @@
 #include <cstdint>
 #include <thread>
 
+//Don't try this at home - for root access
+#define private public 
+#include "splayset_concurrent.hpp"
+#include "stopwatch.hpp"
+#include "rc4prng.hpp"
+#include "Settings.h"
+#include "testingUtils.h"
 
 void test_group_parallel_orig(rc4prng<>& rng, const concurrency::concurrent_unordered_set<uint64_t>& cs, splayset<uint64_t>&st)
 {
@@ -91,6 +92,9 @@ int main_parallel_orig_performance()
 	stopwatch.stop();
 	std::cout << stopwatch.getMiliseconds() << std::endl;
 	std::cout << "Tree size:" << st.size() << std::endl;
+	std::cout << "Checking tree consistency ..." << std::endl;
+	testTreeConsistency(st, concurrency_ * item_count);
+	std::cout << "Done" << std::endl;
 	stopwatch.start();
 
 	for (size_t tid = 0; tid < concurrency_; ++tid)
@@ -106,7 +110,9 @@ int main_parallel_orig_performance()
 	stopwatch.stop();
 	std::cout << stopwatch.getMiliseconds() << std::endl;
 	std::cout << "Tree size:" << st.size() << std::endl;
-
+	std::cout << "Checking tree consistency ..." << std::endl;
+	testTreeConsistency(st, concurrency_ * item_count);
+	std::cout << "Done" << std::endl;
 	testCSnSt(cs, st);
 
 	return 0;

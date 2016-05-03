@@ -11,6 +11,14 @@ inline void my_assert(bool expresssion)
 	}
 }
 
+inline void my_assert(bool expression, char* message)
+{
+	if (!expression)
+	{
+		std::cout << "Problem: " << message << std::endl;
+	}
+}
+
 
 template <typename T>
 void testCSnSt(const concurrency::concurrent_unordered_set<T>& cs, splayset<T>& st)
@@ -29,4 +37,23 @@ void testUSnSt(const std::unordered_set<T>& us, splayset<T>& st)
 		my_assert(res && res->data == item);
 	}
 }
+
+//Expects node to have parent
+template <typename T>
+size_t subTreeCountAndCheckParent(typename splayset<T>::node* node)
+{
+	if (!node) return 0;
+	my_assert(node->P->L == node || node->P->R == node, "father doesn't recognize his son");
+	return subTreeCountAndCheckParent<T>(node->L) + 1 + subTreeCountAndCheckParent<T>(node->R);
+}
+
+template <typename T>
+void testTreeConsistency(splayset<T>& st, size_t expectedNodeCount)
+{
+	using node = typename splayset<T>::node;
+	node* root = st.root;
+	size_t count = subTreeCountAndCheckParent<T>(root->L) + 1 + subTreeCountAndCheckParent<T>(root->R);
+	my_assert(count == expectedNodeCount, "node count doesn't match");
+}
+
 

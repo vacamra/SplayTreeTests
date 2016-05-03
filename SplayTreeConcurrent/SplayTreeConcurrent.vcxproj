@@ -143,7 +143,6 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="parallel.cpp" />
     <ClCompile Include="parallel_orig_performance.cpp" />
     <ClCompile Include="serial.cpp" />
     <ClCompile Include="singleThread.cpp" />
