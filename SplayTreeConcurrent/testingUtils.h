@@ -22,7 +22,7 @@ void testCSnSt(const concurrency::concurrent_unordered_set<T>& cs, splayset<T>& 
 }
 
 template <typename T>
-void testUSnSt(const std::unordered_set<T> us, splayset<T>& st)
+void testUSnSt(const std::unordered_set<T>& us, splayset<T>& st)
 {
 	for (const auto& item : us) {
 		auto res = st.find(item);

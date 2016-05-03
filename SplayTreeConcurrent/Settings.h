@@ -2,7 +2,7 @@
 
 #ifdef _DEBUG
 const size_t concurrency_ = 4,
-item_count = 200,
+item_count = 600,
 group_size = 10,
 group_accesses = 20,
 group_count = 10;

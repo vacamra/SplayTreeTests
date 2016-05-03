@@ -9,7 +9,7 @@ int main_singleThread();
 int main()
 {
 start:
-	std::cout << "What mode should I run in?" << std::endl << "Enter " << std::endl <<
+	std::cout << "What mode should I run in?" << std::endl << "Enter: " << std::endl <<
 		"s for original serial (performance)," << std::endl <<
 		"t for single thread test," << std::endl <<
 		"n for naive parallel (one mutex)," << std::endl <<
