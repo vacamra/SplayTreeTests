@@ -2,8 +2,6 @@
 #include <iostream>
 #include <concurrent_unordered_set.h>
 #include <unordered_set>
-//Don't try this at home - for root access
-#define private public 
 #include "splayset_concurrent.hpp"
 
 inline void my_assert(bool expresssion)

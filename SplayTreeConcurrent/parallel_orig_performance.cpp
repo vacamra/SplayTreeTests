@@ -1,10 +1,4 @@
 
-#include "splayset_concurrent.hpp"
-#include "stopwatch.hpp"
-#include "rc4prng.hpp"
-#include "Settings.h"
-#include "testingUtils.h"
-
 #include <cassert>
 #include <concurrent_unordered_set.h>
 #include <mutex>
@@ -15,6 +9,13 @@
 #include <cstdint>
 #include <thread>
 
+//Don't try this at home - for root access
+#define private public 
+#include "splayset_concurrent.hpp"
+#include "stopwatch.hpp"
+#include "rc4prng.hpp"
+#include "Settings.h"
+#include "testingUtils.h"
 
 void test_group_parallel_orig(rc4prng<>& rng, const concurrency::concurrent_unordered_set<uint64_t>& cs, splayset<uint64_t>&st)
 {
