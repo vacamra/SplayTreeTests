@@ -24,15 +24,33 @@
     <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="parallel_orig_performance.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="test_parallel_stupid.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="singleThread.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="splayset.hpp">
-      <Filter>Source Files</Filter>
-    </ClInclude>
     <ClInclude Include="stopwatch.hpp">
       <Filter>Source Files</Filter>
     </ClInclude>
     <ClInclude Include="rc4prng.hpp">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="splayset_concurrent.hpp">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="splayset_serial.hpp">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Settings.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="testingUtils.h">
       <Filter>Source Files</Filter>
     </ClInclude>
   </ItemGroup>

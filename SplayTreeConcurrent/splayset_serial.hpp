@@ -1,11 +1,11 @@
 // Lukas Jendele DU3 NPRG051 2015/16
-#ifndef splayset_included
-#define splayset_included
+#ifndef splayset_serial_included
+#define splayset_serial_included
 
 #include <functional>
 
 template<typename T, typename Comp = std::less<T> >
-class splayset
+class splayset_serial
 {
 private:
 	Comp comp;
@@ -83,9 +83,9 @@ private:
 		return u;
 	}
 public:
-	splayset() : root (nullptr), p_size (0) {}
-	splayset (const splayset&) = delete;
-	~splayset() {
+	splayset_serial() : root (nullptr), p_size (0) {}
+	splayset_serial(const splayset_serial&) = delete;
+	~splayset_serial() {
 		clear();
 	}
 
@@ -192,4 +192,4 @@ public:
 	}
 };
 
-#endif // splayset
+#endif // splayset_serial
