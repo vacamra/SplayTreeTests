@@ -16,7 +16,7 @@ template <typename T>
 void testCSnSt(const concurrency::concurrent_unordered_set<T>& cs, splayset<T>& st)
 {
 	for (const auto& item : cs) {
-		auto res = st.find(item, false);
+		auto res = st.find(item);
 		my_assert(res && res->data == item);
 	}
 }
@@ -25,7 +25,7 @@ template <typename T>
 void testUSnSt(const std::unordered_set<T> us, splayset<T>& st)
 {
 	for (const auto& item : us) {
-		auto res = st.find(item, false);
+		auto res = st.find(item);
 		my_assert(res && res->data == item);
 	}
 }
