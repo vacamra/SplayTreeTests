@@ -1,5 +1,4 @@
 
-#include "splayset_serial.hpp"
 #include "splayset_concurrent.hpp"
 #include "stopwatch.hpp"
 #include "rc4prng.hpp"
@@ -17,7 +16,7 @@
 #include <thread>
 
 
-void test_group_parallel_orig(rc4prng<>& rng, concurrency::concurrent_unordered_set<uint64_t> cs, splayset<uint64_t>&st)
+void test_group_parallel_orig(rc4prng<>& rng, const concurrency::concurrent_unordered_set<uint64_t>& cs, splayset<uint64_t>&st)
 {
 	uint64_t begin = rng.random(), mult = rng.random();
 	for (size_t i = 0; i < group_accesses; ++i) {
