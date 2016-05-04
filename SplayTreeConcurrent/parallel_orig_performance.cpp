@@ -93,7 +93,7 @@ int main_parallel_orig_performance()
 	std::cout << stopwatch.getMiliseconds() << std::endl;
 	std::cout << "Tree size:" << st.size() << std::endl;
 	std::cout << "Checking tree consistency ..." << std::endl;
-	testTreeConsistency(st, concurrency_ * item_count);
+	testTreeConsistency(st, cs.size());
 	std::cout << "Done" << std::endl;
 	stopwatch.start();
 
@@ -111,7 +111,7 @@ int main_parallel_orig_performance()
 	std::cout << stopwatch.getMiliseconds() << std::endl;
 	std::cout << "Tree size:" << st.size() << std::endl;
 	std::cout << "Checking tree consistency ..." << std::endl;
-	testTreeConsistency(st, concurrency_ * item_count);
+	testTreeConsistency(st, cs.size());
 	std::cout << "Done" << std::endl;
 	testCSnSt(cs, st);
 
