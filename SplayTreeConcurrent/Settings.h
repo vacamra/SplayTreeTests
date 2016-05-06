@@ -8,7 +8,7 @@ group_accesses = 20,
 group_count = 10;
 #else
 const size_t concurrency_ = 4,
-item_count = 200000,
+item_count = 200000, 
 group_size = 100,
 group_accesses = 2000,
 group_count = 1000;

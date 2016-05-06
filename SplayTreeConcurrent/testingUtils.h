@@ -39,20 +39,22 @@ void testUSnSt(const std::unordered_set<T> us, splayset<T>& st)
 }
 
 //Expects node to have parent
-template <typename T>
-size_t subTreeCountAndCheckParent(typename splayset<T>::node* node)
+template <typename T, typename Comp>
+size_t subTreeCountAndCheckParent(typename splayset<T, Comp>::node* node)
 {
+	static Comp comp;
 	if (!node) return 0;
 	my_assert(node->P->L == node || node->P->R == node, "father doesn't recognize his son");
-	return subTreeCountAndCheckParent<T>(node->L) + 1 + subTreeCountAndCheckParent<T>(node->R);
+	my_assert(node->P->L == node ? comp(node->data, node->P->data) : comp(node->P->data, node->data), "BST rule violation");
+	return subTreeCountAndCheckParent<T, Comp>(node->L) + 1 + subTreeCountAndCheckParent<T, Comp>(node->R);
 }
 
-template <typename T>
-void testTreeConsistency(splayset<T>& st, size_t expectedNodeCount)
+template <typename T, typename Comp>
+void testTreeConsistency(splayset<T, Comp>& st, size_t expectedNodeCount)
 {
-	using node = typename splayset<T>::node;
+	using node = typename splayset<T, Comp>::node;
 	node* root = st.root;
-	size_t count = subTreeCountAndCheckParent<T>(root->L) + 1 + subTreeCountAndCheckParent<T>(root->R);
+	size_t count = subTreeCountAndCheckParent<T, Comp>(root->L) + 1 + subTreeCountAndCheckParent<T, Comp>(root->R);
 	my_assert(count == expectedNodeCount, "node count doesn't match");
 }
 

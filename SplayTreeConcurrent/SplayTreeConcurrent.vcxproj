@@ -142,7 +142,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="BiasedDataTest.cpp" />
+    <ClCompile Include="lockVector.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="parallel_performance.cpp" />
+    <ClCompile Include="serial_biased.cpp" />
     <ClCompile Include="parallel_orig_performance.cpp" />
     <ClCompile Include="serial.cpp" />
     <ClCompile Include="singleThread.cpp" />

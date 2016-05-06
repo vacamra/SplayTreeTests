@@ -4,7 +4,10 @@
 int main_parallel_orig_performance();
 int main_parallel_stupid();
 int main_serial_orig_perfomance();
+int main_serial_biasedData();
 int main_singleThread();
+int main_biasedData();
+int main_parallel_performance();
 
 int main()
 {
@@ -13,7 +16,10 @@ start:
 		"s for original serial (performance)," << std::endl <<
 		"t for single thread test," << std::endl <<
 		"n for naive parallel (one mutex)," << std::endl <<
-		"p for parallel," << std::endl << 
+		"p for parallel," << std::endl <<
+		"f for parallel (performance - no checks), " << std::endl <<
+		"b for biased," << std::endl <<
+		"c for serial (original) biased," << std::endl <<
 		"e/q for exit/quit: ";
 	char mode;
 	std::cin >> mode;
@@ -25,6 +31,12 @@ start:
 		main_singleThread();
 	} else if (mode == 'n') {
 		main_parallel_stupid();
+	} else if (mode == 'b')	{
+		main_biasedData();
+	} else if (mode == 'c') {
+		main_serial_biasedData();
+	} else if (mode == 'f') {
+		main_parallel_performance();
 	} else if (mode == 'e' || mode == 'q')
 		return 0;
 	else {
