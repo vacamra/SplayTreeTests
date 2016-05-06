@@ -7,6 +7,7 @@ int main_serial_orig_perfomance();
 int main_serial_biasedData();
 int main_singleThread();
 int main_biasedData();
+int main_biasedDataShuffle();
 int main_parallel_performance();
 
 int main()
@@ -18,7 +19,8 @@ start:
 		"n for naive parallel (one mutex)," << std::endl <<
 		"p for parallel," << std::endl <<
 		"f for parallel (performance - no checks), " << std::endl <<
-		"b for biased," << std::endl <<
+		"b for biased (seq insert - nearly impossible)," << std::endl <<
+		"v for biased (shuffled insert)," << std::endl <<
 		"c for serial (original) biased," << std::endl <<
 		"e/q for exit/quit: ";
 	char mode;
@@ -33,6 +35,8 @@ start:
 		main_parallel_stupid();
 	} else if (mode == 'b')	{
 		main_biasedData();
+	} else if (mode == 'v') {
+		main_biasedDataShuffle();
 	} else if (mode == 'c') {
 		main_serial_biasedData();
 	} else if (mode == 'f') {

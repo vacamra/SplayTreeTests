@@ -33,13 +33,13 @@
     <ClCompile Include="BiasedDataTest.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="lockVector.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="serial_biased.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="parallel_performance.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="bias_data_test_shuffled.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
