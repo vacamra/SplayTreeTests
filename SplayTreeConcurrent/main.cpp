@@ -10,6 +10,7 @@ int main_biasedData();
 int main_biasedDataShuffle();
 int main_parallel_performance();
 int main_clear();
+int main_erase();
 
 int main()
 {
@@ -24,7 +25,8 @@ start:
 		"v for biased (shuffled insert)," << std::endl <<
 		"c for serial (original) biased," << std::endl <<
 		"r for clear() and empty() test," << std::endl <<
-		"e/q for exit/quit: ";
+		"e for erase() and erase-find consistency test," << std::endl <<
+		"q for quit: ";
 	char mode;
 	std::cin >> mode;
 	if (mode == 'p') {
@@ -45,7 +47,9 @@ start:
 		main_parallel_performance();
 	} else if (mode == 'r') {
 		main_clear();
-	} else if (mode == 'e' || mode == 'q')
+	} else if (mode == 'e') {
+		main_erase();
+	} else if (mode == 'q')
 		return 0;
 	else {
 		std::cout << "Wrong mode! Try again!" << std::endl;		

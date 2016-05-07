@@ -145,6 +145,7 @@
     <ClCompile Include="BiasedDataTest.cpp" />
     <ClCompile Include="bias_data_test_shuffled.cpp" />
     <ClCompile Include="clear.cpp" />
+    <ClCompile Include="erase.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="parallel_performance.cpp" />
     <ClCompile Include="serial_biased.cpp" />
