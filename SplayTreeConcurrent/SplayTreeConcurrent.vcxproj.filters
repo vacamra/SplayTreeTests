@@ -48,6 +48,9 @@
     <ClCompile Include="erase.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="everything.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stopwatch.hpp">

@@ -11,6 +11,7 @@ int main_biasedDataShuffle();
 int main_parallel_performance();
 int main_clear();
 int main_erase();
+int main_everything();
 
 int main()
 {
@@ -26,6 +27,7 @@ start:
 		"c for serial (original) biased," << std::endl <<
 		"r for clear() and empty() test," << std::endl <<
 		"e for erase() and erase-find consistency test," << std::endl <<
+		"m for random insert(), find(), erase(), size(), clear(), empty() test," << std::endl <<
 		"q for quit: ";
 	char mode;
 	std::cin >> mode;
@@ -49,6 +51,8 @@ start:
 		main_clear();
 	} else if (mode == 'e') {
 		main_erase();
+	} else if (mode == 'm') {
+		main_everything();
 	} else if (mode == 'q')
 		return 0;
 	else {
