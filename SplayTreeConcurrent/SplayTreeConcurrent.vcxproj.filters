@@ -42,6 +42,9 @@
     <ClCompile Include="bias_data_test_shuffled.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="clear.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stopwatch.hpp">

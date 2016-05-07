@@ -9,6 +9,7 @@ int main_singleThread();
 int main_biasedData();
 int main_biasedDataShuffle();
 int main_parallel_performance();
+int main_clear();
 
 int main()
 {
@@ -22,6 +23,7 @@ start:
 		"b for biased (seq insert - nearly impossible)," << std::endl <<
 		"v for biased (shuffled insert)," << std::endl <<
 		"c for serial (original) biased," << std::endl <<
+		"r for clear() and empty() test," << std::endl <<
 		"e/q for exit/quit: ";
 	char mode;
 	std::cin >> mode;
@@ -41,6 +43,8 @@ start:
 		main_serial_biasedData();
 	} else if (mode == 'f') {
 		main_parallel_performance();
+	} else if (mode == 'r') {
+		main_clear();
 	} else if (mode == 'e' || mode == 'q')
 		return 0;
 	else {
