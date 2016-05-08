@@ -5,6 +5,7 @@ HEADERS=splayset_serial.hpp splayset_concurrent.hpp stopwatch.hpp rc4prng.hpp
 CXXFLAGS=-std=c++11 -O3
 #CXXFLAGS=-std=c++11 -g
 LDFLAGS=-pthread
+WALL=-Wall
 TBBFLAGS=-L/usr/lib/ -ltbb
 
 all: $(PROGS)
@@ -13,7 +14,7 @@ all: $(PROGS)
 #	g++ $(CXXFLAGS) $(LDFLAGS) $@.cpp -o $(CPPFILES) $(TBBFLAGS)
 
 main:
-	g++ $(CXXFLAGS) $(LDFLAGS) -o SplayTreeConcurrent $(CPPFILES) $(TBBFLAGS)
+	g++ $(CXXFLAGS) $(LDFLAGS) $(WALL) -o SplayTreeConcurrent $(CPPFILES) $(TBBFLAGS)
 
 clean:
 	rm serial parallel

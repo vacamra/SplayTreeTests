@@ -17,7 +17,7 @@ void test_group_serial_performance(rc4prng<>& rng, splayset_serial<uint64_t>&st)
 	uint64_t begin = rng.random(), mult = rng.random();
 	for (size_t i = 0; i < group_accesses; ++i) {
 		int64_t query = begin + mult * rng.random(group_size);
-		auto result = st.find(query);
+		st.find(query);
 	}
 }
 

@@ -13,7 +13,7 @@ void test_group_parallel_stupid(rc4prng<>& rng, std::mutex& mtx, splayset_serial
 	for (size_t i = 0; i < group_accesses; ++i) {
 		std::lock_guard<std::mutex> locker(mtx);
 		int64_t query = begin + mult * rng.random(group_size);
-		auto result = st.find(query);
+		st.find(query);
 	}
 }
 

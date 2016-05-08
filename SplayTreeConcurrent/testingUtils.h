@@ -11,7 +11,7 @@ inline void my_assert(bool expresssion)
 	}
 }
 
-inline void my_assert(bool expression, char* message)
+inline void my_assert(bool expression, const char* message)
 {
 	if (!expression)
 	{
