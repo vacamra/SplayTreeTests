@@ -1,11 +1,10 @@
-#include <concurrent_unordered_set.h>
+#include "Settings.h"
 
 #ifndef private
 #define private public
 #endif
 #include "splayset_concurrent.hpp"
 #include "stopwatch.hpp"
-#include "Settings.h"
 #include "rc4prng.hpp"
 #include "testingUtils.h"
 

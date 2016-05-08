@@ -1,5 +1,4 @@
-#include <concurrent_unordered_set.h>
-#include <concurrent_vector.h>
+#include "Settings.h"
 
 #ifndef private
 #define private public

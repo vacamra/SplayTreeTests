@@ -1,7 +1,6 @@
+#include "Settings.h"
 
 #include <cassert>
-#include <concurrent_unordered_set.h>
-#include <concurrent_vector.h>
 #include <mutex>
 #include <fstream>
 #include <iostream>
@@ -15,7 +14,6 @@
 #include "splayset_concurrent.hpp"
 #include "stopwatch.hpp"
 #include "rc4prng.hpp"
-#include "Settings.h"
 #include "testingUtils.h"
 
 int main_everything()

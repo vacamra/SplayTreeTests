@@ -1,7 +1,8 @@
+#include "Settings.h"
+
 #include "splayset_serial.hpp"
 #include "stopwatch.hpp"
 #include "rc4prng.hpp"
-#include "Settings.h"
 #include "testingUtils.h"
 
 #include <unordered_set>

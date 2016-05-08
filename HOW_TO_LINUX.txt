@@ -1,0 +1,32 @@
+Ubuntu / Debian
+===============
+
+Pozn.: Mozna budete potrebovat sudo :)
+
+1) G++
+======
+
+Uz by melo byt predinstalovane, zkuste:
+g++ --version
+
+Pokud neni nainstalovane:
+http://askubuntu.com/questions/348654/how-to-install-g-compiler
+
+2) TBB
+======
+
+Nutne kvuli testovani s concurrent setem a vectorem.
+
+apt-get install libtbb2
+
+apt-get install libtbb-dev
+
+3) Make
+=======
+
+cd SplayTreeConcurrent
+make
+
+Az se to povede, tak spustte vysledne veledilo:
+
+./SplayTreeConcurrent

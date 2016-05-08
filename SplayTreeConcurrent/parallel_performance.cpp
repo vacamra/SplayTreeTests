@@ -1,10 +1,11 @@
+#include "Settings.h"
+
 #include <iostream>
 #include <thread>
 
 #include "splayset_concurrent.hpp"
 #include "stopwatch.hpp"
 #include "rc4prng.hpp"
-#include "Settings.h"
 
 void test_group_parallel_orig(rc4prng<>& rng, splayset<uint64_t>&st)
 {

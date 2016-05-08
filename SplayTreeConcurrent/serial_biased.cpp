@@ -1,7 +1,8 @@
+#include "Settings.h"
+
 #include <iostream>
 #include "splayset_serial.hpp"
 #include "stopwatch.hpp"
-#include "Settings.h"
 #include "rc4prng.hpp"
 
 void test_group_biased(uint64_t start, splayset_serial<uint64_t>& st)

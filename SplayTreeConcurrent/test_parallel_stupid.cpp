@@ -1,4 +1,5 @@
 #include "Settings.h"
+
 #include "rc4prng.hpp"
 #include "stopwatch.hpp"
 #include "splayset_serial.hpp"

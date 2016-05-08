@@ -1,6 +1,6 @@
 #pragma once
+#include "Settings.h"
 #include <iostream>
-#include <concurrent_unordered_set.h>
 #include <unordered_set>
 #include "splayset_concurrent.hpp"
 

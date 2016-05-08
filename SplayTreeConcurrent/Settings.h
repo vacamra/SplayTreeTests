@@ -1,5 +1,19 @@
 #pragma once
 
+#include <cstddef>
+#include <cstdint>
+#include <thread>
+
+#if defined __GNUC__
+#include <tbb/concurrent_unordered_set.h>
+#include <tbb/concurrent_vector.h>
+#define concurrency tbb
+#define Concurrency tbb
+#else
+#include <concurrent_unordered_set.h>
+#include <concurrent_vector.h>
+#endif
+
 #ifdef _DEBUG
 const size_t concurrency_ = 4,
 item_count = 600,
