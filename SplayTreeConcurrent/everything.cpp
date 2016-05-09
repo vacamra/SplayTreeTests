@@ -8,6 +8,7 @@
 #include <sstream>
 #include <cstdint>
 #include <thread>
+#include <unordered_set>
 
 //Don't try this at home - for root access
 #define private public 
@@ -35,11 +36,20 @@ int main_everything()
 	std::thread thread[concurrency_];
 	bpp::Stopwatch stopwatch(true);
 
+	// generate concurrency_ * item_count random items
+	std::unordered_set<int64_t> randomDataSet;
+	while (randomDataSet.size() < concurrency_ * item_count)
+		randomDataSet.insert(thread_rng[0].random());
+
+	std::vector<int64_t> randomData;
+	for (auto i : randomDataSet)
+		randomData.emplace_back(i);
+
 	for (size_t tid = 0; tid < concurrency_; ++tid)
-		thread[tid] = std::thread([tid, &thread_rng, &st, &cs]()
+		thread[tid] = std::thread([tid, &thread_rng, &st, &cs, &randomData]()
 	{
-		for (size_t i = 0; i < item_count; ++i) {
-			int64_t val = thread_rng[tid].random();
+		for (size_t i = tid * item_count; i < (tid + 1) * item_count; ++i) {
+			int64_t val = randomData[i];
 			st.insert(val);
 			cs.insert(val);
 			my_assert(st.find(val) != nullptr);
