@@ -6,6 +6,7 @@
 #include "splayset_concurrent.hpp"
 #include "stopwatch.hpp"
 #include "rc4prng.hpp"
+#include "testingUtils.h"
 
 void test_group_parallel_orig(rc4prng<>& rng, splayset<uint64_t>&st)
 {
